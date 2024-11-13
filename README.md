@@ -169,7 +169,7 @@ Contributions are welcome! If you'd like to improve the dashboard or add new fea
 2. **Clone Your Fork**:
 
    ```bash
-   git clone https://github.com/basli/openFDA_map.git
+   git clone https://github.com/baslia/openFDA_map.git
    cd openfda-dashboard
    ```
 
