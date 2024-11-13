@@ -111,7 +111,7 @@ Once the installation and configuration are complete, you can run the dashboard 
 1. **Navigate to the Project Directory** (if not already there):
 
    ```bash
-   cd openfda-dashboard
+   cd openFDA_map
    ```
 
 2. **Run the Application**:
