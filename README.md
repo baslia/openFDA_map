@@ -42,8 +42,8 @@ Before setting up the dashboard, ensure you have the following installed on your
 First, clone the repository to your local machine using Git. If you don't have Git installed, you can download the source code as a ZIP file and extract it.
 
 ```bash
-git clone https://github.com/baslia/openfda_map.git
-cd openfda-dashboard
+git clone https://github.com/baslia/openFDA_map.git
+cd openFDA_map
 ```
 
 ### 2. Create a Virtual Environment (Optional but Recommended)
