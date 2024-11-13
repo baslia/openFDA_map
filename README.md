@@ -170,7 +170,7 @@ Contributions are welcome! If you'd like to improve the dashboard or add new fea
 
    ```bash
    git clone https://github.com/baslia/openFDA_map.git
-   cd openfda-dashboard
+   cd openFDA_map
    ```
 
 3. **Create a New Branch**:
