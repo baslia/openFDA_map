@@ -1,3 +1,5 @@
+import os
+
 import requests
 import pandas as pd
 
@@ -13,7 +15,7 @@ def fetch_openfda_data(limit=1000):
     - DataFrame containing the fetched data
     """
     url = 'https://api.fda.gov/drug/event.json'
-    params = {
+    params = { 'api_key': os.getenv('OPENFDA_API_KEY'),
         'search': 'patient.reaction.reactionmeddrapt:*',
         'limit': limit
     }
