@@ -36,6 +36,10 @@ app.layout = html.Div([
     ], style={'width': '25%', 'display': 'inline-block', 'padding': '10px'}),
 
     html.Div([
+        dcc.Graph(id='event-map')
+    ]),
+
+    html.Div([
         html.Label("Select Year:"),
         dcc.Dropdown(
             id='year-dropdown',
@@ -161,6 +165,28 @@ def update_table(selected_year, selected_event_type):
                    align='left'))
     ])
     fig.update_layout(title='Sample Adverse Event Reports')
+    return fig
+
+
+@app.callback(
+    Output('event-map', 'figure'),
+    [Input('year-dropdown', 'value'),
+     Input('event-type-dropdown', 'value')]
+)
+def update_event_map(selected_year, selected_event_type):
+    if selected_event_type != 'food':
+        return go.Figure()  # Return an empty figure if the event type is not 'food'
+
+    filtered_df = df[(df['year'] == selected_year) & (df['event_type'].str.lower() == 'food')]
+
+    if filtered_df.empty:
+        return go.Figure()
+
+    fig = px.scatter_geo(filtered_df, locations='state', locationmode='USA-states',
+                         title='Geographical Distribution of Food Events',
+                         scope='usa', labels={'state': 'State'},
+                         hover_data={'state': True, 'counts': True})
+
     return fig
 
 
